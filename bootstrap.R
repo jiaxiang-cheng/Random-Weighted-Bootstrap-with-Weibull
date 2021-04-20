@@ -1,7 +1,6 @@
 
-
 x <- matrix(ncol = 2)
-num <- 100
+num <- 1000
 
 for (val in 1:num)
 {
