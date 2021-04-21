@@ -83,3 +83,28 @@ numB <- 100 # the number of bootstrap sample
 ```
 You can change `numB`. Normally, for a reliable bootstrap application, the number should be **10000 or more**. But due to the limited device I have, I only tried at maximum of 1000, but it should have been at least 10000 instead.
 
+## Prediction of Remaining Life for Individuals
+After obtaining the bootstrap samples, you can start the prediction of remaining life of individual transformer with `predict_individual.R`. And you can customize which transformers you want to predict, as follows:
+```
+# the number of transformer to predict, this can be customized
+nsample <- 100
+```
+You can change the `nsample` here, and then the prediction will be conducted for the first _nsample_ transformers. This can be modified according to your own interests. No need to start counting from the beginning.
+
+Then after running the codes, you will have you intervals predicted corresponding to you selected samples in `interval_pred`, as follows:
+```
+# the prediction of remaining life with 90% confidence interval for individuals
+interval_pred <- interval[1:nsample + 1,]
+```
+The lower and upper bounds will be recorded accordingly in this matrix, like this:
+|               | V1            | V2    |
+|:-------------: |:-------------:|:-------------:|
+| 1      | 185.1475 | 216.6756 |
+| 2      | 189.3531      |   221.7536 |
+| 3 | 187.1826      |    219.0999 |
+
+You can do the visualization with the matrix in your own style. And I prefer to visualize it using Matlab as follows. It can be seen from the following figure that with more bootstrap samples, the prediction intervals are getting converged:
+![trial_bootstrap](https://user-images.githubusercontent.com/67684198/115532940-d70c5280-a2c8-11eb-8378-235c3f65505a.png)
+
+## Prediction of Number of failures for Population
+
