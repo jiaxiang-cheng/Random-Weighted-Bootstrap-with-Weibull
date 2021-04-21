@@ -104,7 +104,7 @@ The lower and upper bounds will be recorded accordingly in this matrix, like thi
 | 3 | 187.1826      |    219.0999 |
 
 You can do the visualization with the matrix in your own style. And I prefer to visualize it using Matlab as follows. It can be seen from the following figure that with more bootstrap samples, the prediction intervals are getting converged:
-![trial_bootstrap](https://user-images.githubusercontent.com/67684198/115532940-d70c5280-a2c8-11eb-8378-235c3f65505a.png)
+![trial_bootstrap](https://user-images.githubusercontent.com/67684198/115533818-b1cc1400-a2c9-11eb-9909-90aece26918a.png)
 
 ## Prediction of Number of failures for Population
 
