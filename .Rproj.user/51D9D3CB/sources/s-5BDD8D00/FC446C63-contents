@@ -1,0 +1,49 @@
+library(Rlab)
+
+ndim_bern <- 20
+
+K_B <- matrix(nrow = 10, ncol = ndim_bern)
+Mu_K <- matrix(nrow = 10, ncol = ndim_bern)
+Sig_K <- matrix(nrow = 10, ncol = ndim_bern)
+Ga_K <- matrix(nrow = 10, ncol = ndim_bern)
+
+for (i_bern in 1:ndim_bern) {
+  for (tfur in 2021:2030) {
+    K_B[tfur - 2020, i_bern] <- 0
+    Mu_K[tfur - 2020, i_bern] <-  0
+    Sig_K[tfur - 2020, i_bern] <- 0
+    Ga_K[tfur - 2020, i_bern] <- 0
+    mu_K <- 0
+    sig_K <- 0
+    ga_K <- 0
+    for (idx_i in 1:k) {
+      tcur_i <- data.matrix(data_set_risk[, "time"])[idx_i]
+      
+      tfur_i <- tfur - tcut + tcur_i
+      
+      rou <-
+        (exp(-(tcur_i / B[i_bern, 2]) ^ B[i_bern, 1]) - exp(-(tfur_i / B[i_bern, 2]) ^
+                                                              B[i_bern, 1])) / (exp(-(tcur_i / B[i_bern, 2]) ^ B[i_bern, 1]))
+      
+      if (runif(1) < dbern(1, rou, log = FALSE)) {
+        I <- 1
+        mu_K <- mu_K + rou
+        
+        sig_K <- sig_K + rou * (1 - rou)
+        
+        ga_K <- ga_K + rou * (1 - rou) * (1 - 2 * rou)
+      } else{
+        I <- 0
+      }
+      
+      K_B[tfur - 2020, i_bern] <-  K_B[tfur - 2020, i_bern] + I
+      
+      
+    }
+    sig_K <- sqrt(sig_K)
+    ga_K <- sig_K ^ (-3) * ga_K
+    Mu_K[tfur - 2020, i_bern] <-  mu_K
+    Sig_K[tfur - 2020, i_bern] <-  sig_K
+    Ga_K[tfur - 2020, i_bern] <-  ga_K
+  }
+}

@@ -1,0 +1,51 @@
+library(nleqslv)
+
+nsample <- 100
+
+interval <- matrix(ncol = 2)
+
+for (sample in 1:nsample) {
+  f <- runif(num)
+  Tb <- list()
+  U <- matrix()
+  t_i <- time[sample]
+  
+  for (prob in f) {
+    fn <- function(tx) {
+      return(prob - (exp(-(t_i / scale_lt) ^ shape_lt) - exp(-(tx / scale_lt) ^
+                                                               shape_lt)) / (exp(-(t_i / scale_lt) ^ shape_lt)))
+    }
+    Tb <- rbind(Tb, nleqslv(100, fn)$x)
+  }
+  
+  
+  for (i in 1:num) {
+    u <-
+      (exp(-(t_i / B[i, 2]) ^ B[i, 1]) - exp(-(as.numeric(Tb[i]) / B[i, 2]) ^
+                                               B[i, 1])) / (exp(-(t_i / B[i, 2]) ^ B[i, 1]))
+    U <- rbind(U, c(u))
+  }
+  
+  Ub <- U[2:num + 1,]
+  
+  Ub_sd <- sd(Ub)
+  me <- qt(.95, 9) * sd(Ub) / sqrt(num)
+  u_l <- mean(Ub) - me
+  u_u <- mean(Ub) + me
+  
+  fn_l <- function(tx) {
+    return(u_l -  (exp(-(t_i / scale_lt) ^ shape_lt) - exp(-(tx / scale_lt) ^
+                                                             shape_lt)) / (exp(-(t_i / scale_lt) ^ shape_lt)))
+  }
+  T_l <- nleqslv(100, fn_l)$x
+  
+  fn_u <- function(tx) {
+    return(u_u -  (exp(-(t_i / scale_lt) ^ shape_lt) - exp(-(tx / scale_lt) ^
+                                                             shape_lt)) / (exp(-(t_i / scale_lt) ^ shape_lt)))
+  }
+  T_u <- nleqslv(100, fn_u)$x
+  
+  interval <- rbind(interval, c(T_l, T_u))
+}
+
+interval_pred <- interval[1:nsample+1,]

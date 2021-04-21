@@ -1,0 +1,13 @@
+library(readxl)
+
+data_set_raw <- read_excel("master_data.xlsx", sheet = "master")
+data_set <- data_set_raw[which(data_set_raw$clear == 0),]
+
+id <- data.matrix(data_set[, "id"])
+manuf <- as.factor(data.matrix(data_set[, "manuf"]))
+time <- data.matrix(data_set[, "time"])
+time_lt <- data.matrix(data_set[, "time_lt"])
+status <- data.matrix(data_set[, "status"])
+trunc <- data.matrix(data_set[, "trunc"])
+
+ndim <- dim(id)[1]

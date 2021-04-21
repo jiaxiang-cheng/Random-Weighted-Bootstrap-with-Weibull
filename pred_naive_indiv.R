@@ -3,7 +3,7 @@ library(nleqslv)
 
 interval_naive <- matrix(ncol = 2)
 
-for (sample in 1:10) {
+for (sample in 1:100) {
 
   t_i <- time[sample]
   

@@ -4,19 +4,15 @@ library(survminer)
 library(Metrics)
 library(maxLik)
 
-
 logLikFun <- function(param) {
   beta <- param[1]
   ita <- param[2]
-  c <- status[1:17000]
-  v <- trunc[1:17000]
-  t <- time[1:17000]
-  tL <- time_lt[1:17000]
-  #f = (beta/ita)*((t/ita)^(beta-1))*exp((-t/ita)^beta)
+  c <- status[1:ndim]
+  v <- trunc[1:ndim]
+  t <- time[1:ndim]
+  tL <- time_lt[1:ndim]
   f = log(beta / ita) + (beta - 1) * log(t / ita) - (t / ita) ^ beta
-  #fu = 1-exp((-t/ita)^beta)
   fu = (t / ita) ^ beta
-  #fuL = 1-exp((-tL/ita)^beta)
   fuL = (tL / ita) ^ beta
   sum(c * v * f + c * (1 - v) * (f + fuL) + (1 - c) * v * (-fu) + (1 - c) *
         (1 - v) * (fuL - fu))

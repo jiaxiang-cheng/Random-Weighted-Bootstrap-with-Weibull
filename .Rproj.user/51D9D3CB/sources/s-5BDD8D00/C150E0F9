@@ -1,0 +1,24 @@
+{
+    "id": "C150E0F9",
+    "path": "~/Downloads/Nanyang Technological University/SP-NTU P3 - Documents/Demo/Prediction-of-Remaining-Life-of-Power-Transformers/predict_individual.R",
+    "project_path": "predict_individual.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1618988881822.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "cursorPosition": "44,39",
+        "scrollLine": "39"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1618989683,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1618989683,
+    "read_only": false,
+    "read_only_alternatives": []
+}
