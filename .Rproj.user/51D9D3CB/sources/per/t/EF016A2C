@@ -12,14 +12,14 @@
     "properties": {
         "expression": "interval_pred",
         "caption": "interval_pred",
-        "totalObservations": 100,
-        "displayedObservations": 100,
-        "variables": 2,
-        "cacheKey": "5EF31AD9",
+        "totalObservations": "100",
+        "displayedObservations": "100",
+        "variables": "2",
+        "cacheKey": "C52F0F71",
         "object": "interval_pred",
         "environment": "",
-        "contentUrl": "grid_resource/gridviewer.html?env=&obj=interval_pred&cache_key=5EF31AD9&max_cols=50",
-        "preview": 0
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=interval_pred&cache_key=C52F0F71&max_cols=50",
+        "preview": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 4467382054,
