@@ -107,4 +107,19 @@ You can do the visualization with the matrix in your own style. And I prefer to 
 ![trial_bootstrap](https://user-images.githubusercontent.com/67684198/115533818-b1cc1400-a2c9-11eb-9909-90aece26918a.png)
 
 ## Prediction of Number of failures for Population
+Now you can predict the number of failures in the future within the current population by running `predict_population.R`. Please notice if any new samples added in the later years the population should be updated and the prediction would be updated as well.
+```
+# the number of bootstrap samples used for simulation
+ndim_bern <- 100 # cannot be greater than numB
+tcut <- 2020 # the cutting year, end of current observation
+tpred <- 2030 # the end year of prediction
+tdelta <-
+  1 # the accuracy of the prediction like 2021, 2022 or 2021.2, 2021.3..
+```
+In this part, you can still choose your bootstrap samples to use by changing `ndim_bern`, which have been generated with `bootstrap.R`. And still, the number of bootstrap samples should be 10000 and more to achieve optimal results. The computational complexity is even more tremendous for this part. And you can also change the current year `tcut`, the end of observation, according to your own data set. And the prediction horizon and accuracy can be adjusted as well by `tpred` and `tdelta`.
 
+Then you will receive the results in `K_B`, the number of rows will be decided by your prediction horizon and accuracy, and the number of columns will be determined by the number of bootstrap samples you used, the more the better. And then you can visualize the results freely. Normally, you will want to get a mean prediciton like follows:
+
+![predict_population](https://user-images.githubusercontent.com/67684198/115645043-3bbfbf80-a352-11eb-800d-516deb12e0e8.png)
+
+> **Acknowledgement** Many thanks for the great work by Hong, Y., Meeker, W. Q., &amp; McCalley, J. D. (2009). Prediction of remaining life of power transformers based on left truncated and right censored lifetime data. _Annals of Applied Statistics_, 3(2), 857-879. For any issues, please feel free to contact me JIAXIANG002@E.NTU.EDU.SG.
