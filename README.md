@@ -1,7 +1,9 @@
 # Prediction of Remaining Life of Power Transformers
 Reproduction of the work by Hong, Y., Meeker, W. Q., &amp; McCalley, J. D. (2009). Prediction of remaining life of power transformers based on left truncated and right censored lifetime data. _Annals of Applied Statistics_, 3(2), 857-879.
 
-Author: **Jiaxiang Cheng**, _Nanyang Technological University_
+Author: **Jiaxiang Cheng**, _Nanyang Technological University_ 
+
+[![DOI](https://zenodo.org/badge/359709446.svg)](https://zenodo.org/badge/latestdoi/359709446)
 
 ## Data Preparation
 You may prepare the data set alighed with _master_data.xlsx_. The general structure and information included in our data set are introduced here:
