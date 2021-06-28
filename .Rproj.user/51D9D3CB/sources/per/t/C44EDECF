@@ -1,24 +1,24 @@
 {
     "id": "C44EDECF",
-    "path": "~/Downloads/Nanyang Technological University/SP-NTU P3 - Documents/Demo/Prediction-of-Remaining-Life-of-Power-Transformers/bootstrap.R",
+    "path": "~/Downloads/Project/Prediction-of-Remaining-Life-of-Power-Transformers/bootstrap.R",
     "project_path": "bootstrap.R",
     "type": "r_source",
-    "hash": "1754021006",
+    "hash": "4215430617",
     "contents": "",
     "dirty": false,
     "created": 1618984562582.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
-        "cursorPosition": "7,19",
+        "cursorPosition": "5,11",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1618989940,
+    "lastKnownWriteTime": 1622083021,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1618989940728,
+    "last_content_update": 1622083021407,
     "read_only": false,
     "read_only_alternatives": []
 }

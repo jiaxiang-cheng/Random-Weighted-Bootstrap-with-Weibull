@@ -3,7 +3,7 @@
 
 # initialize the matrix for saving the bootstrap samples
 B <- matrix(ncol = 2)
-numB <- 100 # the number of bootstrap sample
+numB <- 100000 # the number of bootstrap sample
 
 for (val in 1:numB)
 {

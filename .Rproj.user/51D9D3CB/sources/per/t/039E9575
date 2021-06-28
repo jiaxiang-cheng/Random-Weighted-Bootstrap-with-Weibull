@@ -1,6 +1,6 @@
 {
     "id": "039E9575",
-    "path": "~/Downloads/Nanyang Technological University/SP-NTU P3 - Documents/Demo/Prediction-of-Remaining-Life-of-Power-Transformers/predict_population.R",
+    "path": "~/Downloads/Project/Prediction-of-Remaining-Life-of-Power-Transformers/predict_population.R",
     "project_path": "predict_population.R",
     "type": "r_source",
     "hash": "4106787396",
@@ -15,11 +15,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1618990317,
+    "lastKnownWriteTime": 1619153120,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1618990317156,
+    "last_content_update": 1619153120,
     "read_only": false,
     "read_only_alternatives": []
 }
